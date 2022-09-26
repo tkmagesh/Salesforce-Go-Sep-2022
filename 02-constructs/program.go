@@ -134,4 +134,40 @@ func main() {
 	}
 
 	/* for */
+	fmt.Printf("\nfor\n")
+	fmt.Println("v1.0")
+	for i := 0; i < 10; i++ {
+		fmt.Println(i)
+	}
+
+	fmt.Printf("\nwhile (v2.0)\n")
+	numSum := 1
+	for numSum < 100 {
+		numSum += numSum
+	}
+	fmt.Printf("numSum = %d\n", numSum)
+
+	fmt.Printf("\ninfinite (v3.0)\n")
+
+	num := 1
+	for {
+		num += num
+		if num > 100 {
+			break
+		}
+	}
+	fmt.Printf("num = %d\n", num)
+
+	fmt.Println("Using labels")
+
+OUTER_LOOP:
+	for i := 1; i <= 10; i++ {
+		for j := 1; j <= 10; j++ {
+			fmt.Printf("i = %d, j = %d\n", i, j)
+			if i == j {
+				fmt.Println("========================")
+				continue OUTER_LOOP
+			}
+		}
+	}
 }
