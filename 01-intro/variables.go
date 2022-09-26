@@ -107,4 +107,26 @@ func main() {
 	result := x + y
 	fmt.Printf(str, x, y, result)
 
+	/* ======================================== */
+	//constants
+	// const pi float32 = 3.14
+	// const pi = 3.14
+
+	/*
+		const (
+			pi float32 = 3.14
+			no int     = 100
+		)
+	*/
+
+	/*
+		const (
+			pi = 3.14
+			no = 100
+		)
+	*/
+	const (
+		pi, no = 3.14, 100
+	)
+
 }
