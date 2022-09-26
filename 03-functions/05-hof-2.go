@@ -10,8 +10,15 @@ func main() {
 		subtract(100,200)
 	*/
 
-	logOperation(100, 200, add)
-	logOperation(100, 200, subtract)
+	logAdd := getLoggedOperation(add)
+	logAdd(100, 200)
+
+	//logOperation(100, 200, add)
+
+	logSubtract := getLoggedOperation(subtract)
+	logSubtract(100, 200)
+
+	//logOperation(100, 200, subtract)
 }
 
 func getLoggedOperation(operation func(int, int)) func(int, int) {
