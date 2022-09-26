@@ -46,5 +46,49 @@ Why Go?
         sync package
         sync/atomic package
 
+To run a go program
+    go run <program.go>
+
+To create a build
+    go build <program.go>
+
+To customize the build name
+    go build -o <binary_name> <program.go>
+
+To list all the go environment variables
+    go env
+
+To get the value of environment variables
+    go env <env_var_1> <env_var_2>
+
+To create a build for a different platform (cross compilation)
+    GOOS=<target_os> GOARCH=<target_arch> go build <program.go>
+
+To change the environment variables
+    go env -w GOOS=windows GOARCH=386
 
 
+Data Types
+    bool
+    string
+
+    int
+    int8
+    int16
+    int32
+    int64
+
+    uint
+    uint8
+    uint16
+    uint32
+    uint64
+
+    float32
+    float64
+
+    complex64 (real [float32] imaginary [float32])
+    complex128 (real [float64] imaginary [float64])
+
+    byte (alias for uint8)
+    rune (alias for int32 ) (unicode code point)
