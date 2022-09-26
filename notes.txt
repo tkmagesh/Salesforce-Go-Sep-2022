@@ -95,3 +95,4 @@ Data Types
 
 Functions
     - variadic functions
+    - anonymous functions
