@@ -183,4 +183,12 @@ func main() {
 		REBOOT_ON_FAILURE
 	)
 	fmt.Printf("%b, %b, %b, %b, %b, %b, %b, %b\n", VERBOSE, CONFIG_FROM_DISK, DATABASE_REQUIRED, LOGGER_ACTIVATED, DEBUG, FLOAT_SUPPORT, RECOVERY_MODE, REBOOT_ON_FAILURE)
+
+	//complex type
+	var n1 complex64 = 4 + 2i
+	fmt.Println(n1)
+	fmt.Printf("real = %v, imaginary = %v\n", real(n1), imag(n1))
+
+	var n2 complex64 = 2 + 5i
+	fmt.Println(n1 + n2)
 }
