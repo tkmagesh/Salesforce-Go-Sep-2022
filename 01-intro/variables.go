@@ -129,4 +129,58 @@ func main() {
 		PI, NO = 3.14, 100
 	)
 
+	/* iota */
+
+	/*
+		const (
+			red   = iota
+			green = iota
+			blue  = iota
+		)
+	*/
+
+	/*
+		const (
+			red = iota
+			green
+			blue
+		)
+	*/
+
+	/*
+		const (
+			red = iota + 2
+			green
+			blue
+		)
+	*/
+
+	/*
+		const (
+			red = iota * 2
+			green
+			blue
+		)
+	*/
+
+	const (
+		red = iota * 2
+		green
+		_
+		blue
+	)
+
+	fmt.Printf("red= %d, green = %d, blue = %d\n", red, green, blue)
+
+	const (
+		VERBOSE = 1 << iota
+		CONFIG_FROM_DISK
+		DATABASE_REQUIRED
+		LOGGER_ACTIVATED
+		DEBUG
+		FLOAT_SUPPORT
+		RECOVERY_MODE
+		REBOOT_ON_FAILURE
+	)
+	fmt.Printf("%b, %b, %b, %b, %b, %b, %b, %b\n", VERBOSE, CONFIG_FROM_DISK, DATABASE_REQUIRED, LOGGER_ACTIVATED, DEBUG, FLOAT_SUPPORT, RECOVERY_MODE, REBOOT_ON_FAILURE)
 }
