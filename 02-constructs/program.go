@@ -162,11 +162,14 @@ func main() {
 
 OUTER_LOOP:
 	for i := 1; i <= 10; i++ {
+	INNER_LOOP:
 		for j := 1; j <= 10; j++ {
 			fmt.Printf("i = %d, j = %d\n", i, j)
 			if i == j {
 				fmt.Println("========================")
 				continue OUTER_LOOP
+			} else {
+				continue INNER_LOOP
 			}
 		}
 	}
