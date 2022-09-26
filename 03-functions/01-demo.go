@@ -15,8 +15,8 @@ func main() {
 		fmt.Printf("Dividing 100 by 7, quotient = %d and remainder = %d\n", quotient, remainder)
 	*/
 
-	quotient, _ := divide(100, 7)
-	fmt.Printf("Dividing 100 by 7, quotient = %d \n", quotient)
+	q, _ := divide(100, 7)
+	fmt.Printf("Dividing 100 by 7, quotient = %d \n", q)
 }
 
 /* 01. basic function */
