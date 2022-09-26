@@ -109,24 +109,24 @@ func main() {
 
 	/* ======================================== */
 	//constants
-	// const pi float32 = 3.14
-	// const pi = 3.14
+	// const PI float32 = 3.14
+	// const PI = 3.14
 
 	/*
 		const (
-			pi float32 = 3.14
-			no int     = 100
+			PI float32 = 3.14
+			NO int     = 100
 		)
 	*/
 
 	/*
 		const (
-			pi = 3.14
-			no = 100
+			PI = 3.14
+			NO = 100
 		)
 	*/
 	const (
-		pi, no = 3.14, 100
+		PI, NO = 3.14, 100
 	)
 
 }
