@@ -38,4 +38,14 @@ func main() {
 	fmt.Println("Deleting pen")
 	delete(productRanks, "pen")
 	fmt.Println(productRanks)
+
+	newProductRanks := productRanks
+	newProductRanks["pencil"] = 100
+
+	//productRanks["xyz"] = productRanks["xyz"] + 1
+	//productRanks["xyz"]++
+
+	fmt.Println(productRanks)
+	fmt.Println(newProductRanks)
+
 }
