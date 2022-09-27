@@ -26,4 +26,5 @@ func main() {
 	newNos := nos
 	newNos[0] = 100
 	fmt.Println(newNos, nos)
+
 }
