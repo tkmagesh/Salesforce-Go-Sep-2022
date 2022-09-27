@@ -111,3 +111,53 @@ Collections
         
     - Map
         collection of key/value pairs
+
+Modularity
+    Before Go 1.13
+        No modules
+        The application code should be in a predefined folder 
+        $GOPATH
+            /pkg => code for 3rd party packages will be downloaded
+            /bin => 3rd party binaries will be downloaded
+            /src => your application code
+                /github.com
+                    /tkmagesh
+                        /my-app
+                            import "github.com/tkmagesh/pkg-1"
+                        /pkg-1
+                        /pkg-2
+
+    Modules were introduced in Go 1.13
+        go.mod
+            module name (advisable => repository path of the module ex: github.com/tkmagesh/my-app)
+            minimum go version
+
+        To create a module
+            go mod init <module_name>
+
+        To run a module
+            go run .
+
+        To create a build
+            go build .
+
+        To download a 3rd party package
+            go get <module_name>
+
+        To sync go.mod file with the usage of other modules in the app
+            go mod tidy
+
+        To localize the code of all the dependencies 
+            go mod vendor
+
+        To download the dependencies (based on go.mod file)
+            go mod download
+
+        To install a go executable
+            go install <module>
+
+        go mod graph
+        go mod why
+        
+        Reference:
+            https://go.dev/ref/mod
