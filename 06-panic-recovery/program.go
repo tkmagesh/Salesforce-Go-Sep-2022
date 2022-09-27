@@ -40,6 +40,7 @@ func divideClient(x, y int) (quotient, remainder int, err error) {
 func divide(x, y int) (quotient, remainder int) {
 	if y == 0 {
 		panic(DivideByZeroError)
+
 	}
 	quotient, remainder = x/y, x%y
 	return
