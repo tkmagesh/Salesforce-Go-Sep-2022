@@ -19,7 +19,8 @@ func main() {
 }
 
 func generatePrimes(start, end int) []int {
-	primeNos := make([]int, 0)
+	//primeNos := make([]int, 0)
+	primeNos := []int{}
 	for no := start; no <= end; no++ {
 		if isPrime(no) {
 			primeNos = append(primeNos, no)

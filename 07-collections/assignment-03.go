@@ -19,7 +19,8 @@ func main() {
 }
 
 func calculateWordFrequenciesBySize(words []string) map[int]int {
-	wordsFrequencyBySize := make(map[int]int)
+	//wordsFrequencyBySize := make(map[int]int)
+	wordsFrequencyBySize := map[int]int{}
 	for _, word := range words {
 		wordSize := len(word)
 		wordsFrequencyBySize[wordSize]++
