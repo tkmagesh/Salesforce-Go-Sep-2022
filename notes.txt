@@ -110,3 +110,4 @@ Collections
         3 word object with a pointer to an array
         
     - Map
+        collection of key/value pairs
