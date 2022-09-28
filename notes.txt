@@ -171,8 +171,16 @@ concurrency:
     Channel
         var ch chan int
         ch = make(chan int)
-        
+
         Send operation
             ch <- data
         Receive operation
             fmt.Println(<- ch)
+
+
+        Behavior
+            A RECEIVE operation is ALWAYS a blocking operation
+            A SEND operation is blocked until a RECEIVE operation is initiated (conditions apply)
+                In other words, a SEND operation cannot succeed until a RECEIVE operation is initiated
+
+                
