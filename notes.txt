@@ -161,3 +161,9 @@ Modularity
         
         Reference:
             https://go.dev/ref/mod
+
+
+concurrency:
+    IMPORTANT:
+        NEVER assume the time taken for a goroutine to complete
+        NEVER assume the sequence of execution of goroutines
