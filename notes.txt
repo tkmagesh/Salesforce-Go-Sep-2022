@@ -183,4 +183,5 @@ concurrency:
             A SEND operation is blocked until a RECEIVE operation is initiated (conditions apply)
                 In other words, a SEND operation cannot succeed until a RECEIVE operation is initiated
 
-                
+Testing
+    go test ./...
