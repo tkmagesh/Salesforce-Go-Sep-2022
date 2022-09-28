@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 /*
 	Write the apis for the following
@@ -98,6 +101,54 @@ func (products *Products) Filter(predicate func(Product) bool) Products {
 	return result
 }
 
+/* sort.Interface implmentation */
+
+func (products Products) Len() int {
+	return len(products)
+}
+
+func (products Products) Less(i, j int) bool {
+	return products[i].Id < products[j].Id
+}
+
+func (products Products) Swap(i, j int) {
+	products[i], products[j] = products[j], products[i]
+}
+
+//Sort by cost
+type ByCost struct {
+	Products
+}
+
+func (byCost ByCost) Less(i, j int) bool {
+	return byCost.Products[i].Cost < byCost.Products[j].Cost
+}
+
+func (products Products) Sort(attrName string) {
+	switch attrName {
+	case "Id":
+		sort.Slice(products, func(i, j int) bool {
+			return products[i].Id < products[j].Id
+		})
+	case "Name":
+		sort.Slice(products, func(i, j int) bool {
+			return products[i].Name < products[j].Name
+		})
+	case "Cost":
+		sort.Slice(products, func(i, j int) bool {
+			return products[i].Cost < products[j].Cost
+		})
+	case "Units":
+		sort.Slice(products, func(i, j int) bool {
+			return products[i].Units < products[j].Units
+		})
+	case "Category":
+		sort.Slice(products, func(i, j int) bool {
+			return products[i].Category < products[j].Category
+		})
+	}
+}
+
 func main() {
 	products := Products{
 		Product{105, "Pen", 5, 50, "Stationary"},
@@ -130,5 +181,25 @@ func main() {
 	}
 	stationaryProducts := products.Filter(stationaryProductPredicate)
 	stationaryProducts.Print()
+
+	fmt.Println("Sorting [Default by id]")
+	sort.Sort(products)
+	products.Print()
+
+	fmt.Println("Sorting by cost")
+	sort.Sort(ByCost{products})
+	products.Print()
+
+	fmt.Println("Sorting by units")
+	products.Sort("Units")
+	products.Print()
+
+	fmt.Println("Sorting by name")
+	products.Sort("Name")
+	products.Print()
+
+	fmt.Println("Sorting by category")
+	products.Sort("Category")
+	products.Print()
 
 }
