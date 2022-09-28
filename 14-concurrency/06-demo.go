@@ -9,6 +9,7 @@ import (
 )
 
 func main() {
+
 	var count int
 	flag.IntVar(&count, "count", 0, "the number of goroutines to spawn")
 	flag.Parse()
