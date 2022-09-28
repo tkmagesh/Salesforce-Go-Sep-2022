@@ -167,3 +167,12 @@ concurrency:
     IMPORTANT:
         NEVER assume the time taken for a goroutine to complete
         NEVER assume the sequence of execution of goroutines
+
+    Channel
+        var ch chan int
+        ch = make(chan int)
+        
+        Send operation
+            ch <- data
+        Receive operation
+            fmt.Println(<- ch)
